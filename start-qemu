@@ -106,6 +106,10 @@ if [ -z "${QEMU_NO_VNC:-}" ]; then
 	)
 fi
 
+if [ -n "${QEMU_EXTRA_ARGS:-}" ]; then
+	qemuArgs+=($QEMU_EXTRA_ARGS)
+fi
+
 qemuArgs+=( "$@" )
 
 set -x
